@@ -1,0 +1,3 @@
+0.9.0  2016-10-09
+    - Arbitrary version to start new python3 fork
+    - The chunks screen can sometimes cause a segfault

@@ -1,0 +1,101 @@
+.TH tremc 1 "11 August 2020" "" "tremc"
+
+.SH NAME
+tremc \- a console client for the Transmission BitTorrent
+client
+
+.SH SYNOPSIS
+.B tremc
+.RI [ options ]
+.RI [ filename-or-URL ]
+.br
+
+.SH DESCRIPTION
+.B tremc
+is a curses interface for the Transmission BitTorrent daemon.
+.br
+If a filename or an URL, is given on the command line it is passed (preceeded
+by -a) to transmission-remote, so that the torrent is added. 
+.br
+If -- followed by any options appears on the command line, the following
+options are passed to transmission-remote, together with server and
+authentication information.
+.br
+Othewise, the main curses interface opens.
+
+.SH OPTIONS
+.B
+.IP "--version"
+Show version number and exit
+.B
+.IP "-h --help"
+Show usage information and a list of options
+.B
+.IP "-c \fICONNECTION\fB --connect=\fICONNECTION\fR"
+Point to the server. \fICONNECTION\fR must match the following pattern:
+.br
+[username:password@]host[:port][path]
+.br
+Default: localhost:9091
+.B
+.IP "-s --ssl"
+Use SSL to connect to the server.
+.br
+Default: don't use SSL
+.B
+.IP "--create-config"
+Create configuration file with default values.
+.br
+\fINOTE:\fR A config file won't be created unless you provide this option at
+least once. After that, it is rewritten whenever tremc exits.
+.B
+.IP "-f \fICONFIGFILE\fB --config=\fICONFIGFILE\fR"
+Set path to configuration file. if not creating a config file, and CONFIGFILE
+does not exist (and contains no slashes), the config directory is also
+searched for CONFIGFILE or CONFIGFILE.cfg.
+.br
+Default: ~/.config/tremc/settings.cfg
+.B
+.IP "-l --list-actions"
+List available actions for key mapping.
+.B
+.IP "-k --list-keys"
+List key names for key mapping.
+.B
+.IP "-n --netrc"
+Get authentication info from ~/.netrc.
+.B
+.IP "-X, --skip-version-check, --permissive"
+Proceed even if the running transmission daemon seems incompatible, or the terminal is too small.
+.B
+.IP "-p \fIPROFILE\fB --profile \fIPROFILE\fR"
+Select profile to use.
+.B
+.IP "-r --reverse-dns"
+Toggle display of reverse DNS of peers addresses.
+.br
+Default: on, but may be set in the config file.
+.B
+.IP "-d [\fILOGIFLE\fB] --debug [\fILOGIFLE\fB]\fR"
+Enable debugging messages to stderr, or to LOGFILE if provided.
+
+.IP "-- \fIOPTIONS\fR"
+Use the known server connection to pass \fIOPTIONS\fR on to
+\fBtransmission-remote\fR.
+.B
+
+.SH FILES
+.IP ~/.config/tremc/settings.cfg
+\#.br
+\#tremc overwrites the configuration file on exit.
+\#.br
+\#Keep that in mind if you edit it manually.
+
+.SH SEE ALSO
+.BR transmission-create (1),
+.BR transmission-daemon (1),
+.BR transmission-edit (1),
+.BR transmission-gtk (1),
+.BR transmission-qt (1),
+.BR transmission-remote (1),
+.BR transmission-show (1).

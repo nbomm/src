@@ -1,0 +1,21 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Project specific
+/config.yaml
+/hajimari
+
+# Chart dependencies
+charts/hajimari/charts
+charts/hajimari/Chart.lock
+charts/hajimari/local.yaml

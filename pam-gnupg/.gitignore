@@ -1,0 +1,49 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+
+# Autotools
+Makefile
+Makefile.in
+/configure
+/config.h*
+/config.log
+/config.status
+/aclocal.m4
+/m4
+/autom4te.cache
+/build-aux
+/libtool
+/stamp-h1
+.deps
+.libs
